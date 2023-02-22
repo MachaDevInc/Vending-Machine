@@ -45,9 +45,3 @@ if [ "$output" == 1 ]; then
     flag_update=/root/disk_partition_flag
     cat /root/flag_two>$flag_update
 fi
-
-if [ "$output" == 2 ]; then
-    echo "System is running"
-    python3 WiFiSetup.py
-    python3 VM.py &
-fi
