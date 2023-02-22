@@ -1,5 +1,5 @@
 output=$(cat /root/install_step)
-if [ [ "$output" != 1 ] && [ "$output" != 2 ] ]; then
+if [ "$output" != 1 ] && [ "$output" != 2 ]; then
     echo "Partitioning the memory and setting up swap memory"
     opkg update
     opkg install fdisk kmod-fs-ext4 e2fsprogs swap-utils block-mount
@@ -35,16 +35,6 @@ if [ "$output" == 1 ]; then
     pip3 install stripe
     pip3 install python-dotenv
     pip3 install pyserial
-
-    cd
-
-    git clone https://github.com/MachaDevInc/Vending-Machine.git
-
-    cp /root/Vending-Machine/* /root/
-
-    rm -r /root/Vending-Machine/
-
-    cp /root/rclocal /etc/rc.local
 
     flag_update=/root/install_step
     cat /root/flag_two>$flag_update
