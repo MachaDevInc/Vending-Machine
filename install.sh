@@ -20,11 +20,19 @@ EOF
     /etc/init.d/fstab enable
     block detect > /etc/config/fstab
 
-    mount /dev/mmcblk0p2 /root
+    mount /dev/mmcblk0p2 /overlay
 
     sed -i "11s+0+1+" /etc/config/fstab
     sed -i "16s+0+1+" /etc/config/fstab
-    sed -i "s+'/mnt/mmcblk0p2'+'/root'+g" /etc/config/fstab
+    sed -i "s+'/mnt/mmcblk0p2'+'/overlay'+g" /etc/config/fstab
+
+    cd
+
+    git clone https://github.com/MachaDevInc/Vending-Machine.git
+
+    cp /root/Vending-Machine/* /root/
+
+    rm -r /root/Vending-Machine/
 
     flag_update=/root/install_step
     cat /root/flag_one>$flag_update
