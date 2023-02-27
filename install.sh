@@ -28,6 +28,9 @@ fi
 
 if [ "$output" == 1 ]; then
     echo "Downloading the packages and libraries"
+
+    sleep 20
+
     opkg update
     opkg install python3-pip
 
