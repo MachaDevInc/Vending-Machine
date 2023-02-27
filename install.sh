@@ -20,6 +20,9 @@ EOF
     /etc/init.d/fstab enable
     block detect > /etc/config/fstab
 
+    sed -i "s/option enabled '0'/option enabled '1'/g" /etc/config/fstab
+    sed -i "s+option target '/mnt/mmcblk0p2'+option target '/overlay'+g" /etc/config/fstab
+
     flag_update=/root/install_step
     cat /root/flag_one>$flag_update
 
