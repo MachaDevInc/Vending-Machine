@@ -41,4 +41,6 @@ if [ "$output" == 1 ]; then
 
     flag_update=/root/install_step
     cat /root/flag_two>$flag_update
+
+    reboot && exit
 fi
